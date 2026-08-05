@@ -1,19 +1,4 @@
----
-# Run CodeQL to analyze C/C++ and Python code.
-name: CodeQL
-on:
-  pull_request:
-    types: [opened, reopened, labeled, synchronize]
-    branches: [master]
-  push:
-    branches: [master]
-  schedule:
-    - cron: "27 2 * * 1"
-env:
-  DISABLE_TELEMETRY: 1
-concurrency:
-  group: codeql-${{ github.ref }}
-  cancel-in-progress: true
+
 jobs:
   prepare:
     name: Prepare Jobs
